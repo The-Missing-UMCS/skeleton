@@ -22,6 +22,7 @@ public final class ApplicationContext {
     @SuppressWarnings("unchecked")
     public static <T> T get(Class<T> clazz) {
         return (T) MAP.get(clazz);
+
     }
 
 }
