@@ -7,7 +7,7 @@ public class CodeSnippetConverter {
 
     public static CodeSnippetModel convert(CodeSnippet codeSnippet) {
         CodeSnippetModel codeSnippetModel = new CodeSnippetModel();
-        // TODO: Your conversion logic should go here.
+        // TODO: Implement your conversion logic
         return codeSnippetModel;
     }
 }
