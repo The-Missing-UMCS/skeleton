@@ -1,4 +1,4 @@
-package com.demo.constants;
+package com.demo.common.constants;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -7,3 +7,4 @@ import lombok.NoArgsConstructor;
 public final class FilePathConstants {
 
 }
+

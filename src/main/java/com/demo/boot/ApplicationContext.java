@@ -1,8 +1,10 @@
 package com.demo.boot;
 
-import com.demo.sample.repository.SampleRepository;
-import com.demo.sample.service.SampleService;
-import com.demo.sample.service.SampleServiceImpl;
+import com.demo.application.repository.CodeSnippetRepository;
+import com.demo.application.service.CodeSnippetService;
+import com.demo.application.service.impl.CodeSnippetServiceImpl;
+import com.demo.common.cache.Cache;
+import com.demo.common.cache.CacheImpl;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -11,18 +13,19 @@ import java.util.Map;
 @NoArgsConstructor(access = AccessLevel.NONE)
 public final class ApplicationContext {
 
-    private static final SampleRepository SAMPLE_REPOSITORY = new SampleRepository();
-    private static final SampleService SAMPLE_SERVICE = new SampleServiceImpl(SAMPLE_REPOSITORY);
+    private static final Cache CACHE = new CacheImpl();
+
+    private static final CodeSnippetRepository CODE_SNIPPET_REPOSITORY = null;
+    private static final CodeSnippetService CODE_SNIPPET_SERVICE = null;
 
     private static final Map<Class<?>, Object> MAP = Map.of(
-        SampleRepository.class, SAMPLE_REPOSITORY,
-        SampleService.class, SAMPLE_SERVICE
+        CodeSnippetRepository.class, CODE_SNIPPET_REPOSITORY,
+        CodeSnippetService.class, CODE_SNIPPET_SERVICE
     );
 
     @SuppressWarnings("unchecked")
     public static <T> T get(Class<T> clazz) {
         return (T) MAP.get(clazz);
-
     }
 
 }
